@@ -9,8 +9,35 @@ borrando los inputs ya creados (investigar cómo en MDN).
 
 document.querySelector('#enviar').onclickk = function(evento){
     const $cantidadIntegrantes = document.querySelector('#cantidad')
+    const cantidadIntegrantes = Number($cantidadIntegrantes.value);
+
+    borrarIntegrantesAnteriores();
+    crearIntegrantes(cantidadIntegrantes);
+
+    event.preventDefault();
+};
+
+function crearIntegrantes(cantidadIntegrantes){
+    while (cantidadIntegrantes > 0)
+        crearUnIntegrante();
+        cantidadIntegrantes --; 
 }
 
+function crearUnIntegrante{
+    const $div = document.createElement('div');
+    $div.className = 'integrante';
+  
+    const $label = document.createElement('label');
+    $label.textContent = 'Edad del integrante #: ' + (indice + 1);
+    const $input = document.createElement('input');
+    $input.type = 'number';
+  
+    $div.appendChild($label);
+    $div.appendChild($input);
+  
+    const $integrantes = document.querySelector('#integrantes');
+    $integrantes.appendChild($div);
+}
 
 function crearInputs(){
 
