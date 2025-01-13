@@ -7,28 +7,29 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 borrando los inputs ya creados (investigar cómo en MDN).
 */
 
-document.querySelector('#enviar').onclickk = function(evento){
+document.querySelector('#enviar').onclick = function(event){
     const $cantidadIntegrantes = document.querySelector('#cantidad')
     const cantidadIntegrantes = Number($cantidadIntegrantes.value);
 
-    borrarIntegrantesAnteriores();
+   // borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
 
     event.preventDefault();
 };
 
 function crearIntegrantes(cantidadIntegrantes){
-    while (cantidadIntegrantes > 0)
+    while (cantidadIntegrantes > 0){
         crearUnIntegrante();
-        cantidadIntegrantes --; 
+        cantidadIntegrantes = cantidadIntegrantes - 1; 
+    }
 }
 
-function crearUnIntegrante{
+function crearUnIntegrante(cantidadIntegrantes){
     const $div = document.createElement('div');
     $div.className = 'integrante';
   
     const $label = document.createElement('label');
-    $label.textContent = 'Edad del integrante #: ' + (indice + 1);
+    $label.textContent = 'Edad del integrante ';
     const $input = document.createElement('input');
     $input.type = 'number';
   
