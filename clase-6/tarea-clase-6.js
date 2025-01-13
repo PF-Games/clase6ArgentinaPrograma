@@ -62,14 +62,14 @@ function mostarMenorEdad(){
 
 }
 
-function mostrarPromedioEdad(){
-
+function mostrarPromedioEdad(edadTotal, cantidadIntegrantes){
+    let promedio = calcularPromedio(edadTotal, cantidadIntegrantes);
+    let mensaje = document.createElement('p'); 
+    mensaje.textContent = 'El promedio de edad es ' + promedio;
+    document.body.appendChild(mensaje);
 }
 
-function deshabilitarBoton() {
-    var boton = document.getElementById("enviar");
-    boton.disabled = true
-}
+
 
 //tomada de tarea algoritmos
 function calcularPromedio(total, divisor){
@@ -82,3 +82,9 @@ function calcularPromedio(total, divisor){
       return calcularPromedio(suma, numeros.length);
       
   }    
+
+  function deshabilitarBoton() {
+    var boton = document.getElementById("enviar");
+    boton.disabled = true
+}
+
