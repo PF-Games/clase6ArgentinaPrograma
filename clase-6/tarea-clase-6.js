@@ -7,7 +7,9 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 borrando los inputs ya creados (investigar cómo en MDN).
 */
 
-
+document.querySelector('#enviar').onclickk = function(evento){
+    const $cantidadIntegrantes = document.querySelector('#cantidad')
+}
 
 
 function crearInputs(){
