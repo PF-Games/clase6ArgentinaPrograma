@@ -14,3 +14,7 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor sala
 
 Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
 */
+
+
+alert("hola");
+console.log("hola");
