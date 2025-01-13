@@ -16,5 +16,5 @@ Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como
 */
 
 
-alert("hola");
+
 console.log("hola");
