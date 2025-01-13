@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TareaClase6</title>
 </head>
 <body>
     <form action="/my-handling-form-page" method="post"></form>
     <ul>
         <li>
-          <label for="cantidad">Nombre:</label>
+          <label for="cantidad">Cantidad de integrantes:</label>
           <input type="number" id="cantidad" name="cantidad" />
           <button type="submit" id="Enviar">Enviar</button>
+        </li>
+        <br>
+        <li>
+            <button type="submit" id="calcular">Calcular</button>
         </li>
         <br>
         <li>
             <button type="submit" id="resetear">Empezar de nuevo</button>
         </li>
     </ul>
+
+    <div id="integrantes">
+        
+    </div>
     </form>
 
     <script src="tarea-clase-6.js"></script>
