@@ -11,10 +11,9 @@ document.querySelector('#enviar').onclick = function(event){
     const $cantidadIntegrantes = document.querySelector('#cantidad')
     const cantidadIntegrantes = Number($cantidadIntegrantes.value);
 
-   // borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
-    deshabilitarBoton()
-    
+    deshabilitarBoton();
+
     event.preventDefault();
 };
 
@@ -71,3 +70,15 @@ function deshabilitarBoton() {
     var boton = document.getElementById("enviar");
     boton.disabled = true
 }
+
+//tomada de tarea algoritmos
+function calcularPromedio(total, divisor){
+    let promedio = total/divisor
+    return promedio;
+  }
+  
+  function calcularPromedioDeArray(numeros){
+      const suma = calcularSumaDeArray(numeros);
+      return calcularPromedio(suma, numeros.length);
+      
+  }    
