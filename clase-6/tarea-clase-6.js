@@ -13,7 +13,8 @@ document.querySelector('#enviar').onclick = function(event){
 
    // borrarIntegrantesAnteriores();
     crearIntegrantes(cantidadIntegrantes);
-
+    deshabilitarBoton()
+    
     event.preventDefault();
 };
 
@@ -66,5 +67,7 @@ function mostrarPromedioEdad(){
 
 }
 
-
-
+function deshabilitarBoton() {
+    var boton = document.getElementById("enviar");
+    boton.disabled = true
+}
