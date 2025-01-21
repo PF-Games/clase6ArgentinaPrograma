@@ -48,6 +48,12 @@ function resetear(){
 
 }
 
+document.querySelector('#calcular').onclick = function(event) {
+    calcularEdades();
+    event.preventDefault();
+};
+
+
 function calcularEdades(){
     const edades = obtenerEdades();
     mostarMayorEdad(edades);
@@ -66,14 +72,14 @@ function obtenerEdades(){
     return edades;
 }
 
-function mostarMayorEdad(){
+function mostarMayorEdad(edades){
     const mayorEdad = Math.max(...edades);
     let mensaje = document.createElement('p');
     mensaje.textContent = 'La mayor edad es ' + mayorEdad;
     document.body.appendChild(mensaje);
 }
 
-function mostarMenorEdad(){
+function mostarMenorEdad(edades){
     const menorEdad = Math.min(...edades);
     let mensaje = document.createElement('p');
     mensaje.textContent = 'La menor edad es ' + menorEdad;
@@ -89,18 +95,23 @@ function mostrarPromedioEdad(edadTotal, cantidadIntegrantes){
 }
 
 
-
 //tomada de tarea algoritmos
-function calcularPromedio(total, divisor){
-    let promedio = total/divisor
+function calcularPromedio(edadTotal, cantidadIntegrantes){
+    let promedio = edadTotal/cantidadIntegrantes
     return promedio;
   }
   
-  function calcularPromedioDeArray(numeros){
-      const suma = calcularSumaDeArray(numeros);
+  function calcularPromedioDeArray(edades){
+      const suma = calcularSumaDeArray(edades);
       return calcularPromedio(suma, numeros.length);
       
   }    
+
+  function mostrarResultado(mensaje) {
+    const $resultados = document.querySelector('#resultados');
+    $resultados.innerHTML = '';
+    $resultados.appendChild(mensaje);
+  }
 
   function deshabilitarBoton() {
     var boton = document.getElementById("enviar");
