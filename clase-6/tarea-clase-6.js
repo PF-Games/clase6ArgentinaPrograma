@@ -67,12 +67,19 @@ function obtenerEdades(){
 }
 
 function mostarMayorEdad(){
-
+    const mayorEdad = Math.max(...edades);
+    let mensaje = document.createElement('p');
+    mensaje.textContent = 'La mayor edad es ' + mayorEdad;
+    document.body.appendChild(mensaje);
 }
 
 function mostarMenorEdad(){
-
+    const menorEdad = Math.min(...edades);
+    let mensaje = document.createElement('p');
+    mensaje.textContent = 'La menor edad es ' + menorEdad;
+    document.body.appendChild(mensaje);
 }
+
 
 function mostrarPromedioEdad(edadTotal, cantidadIntegrantes){
     let promedio = calcularPromedio(edadTotal, cantidadIntegrantes);
