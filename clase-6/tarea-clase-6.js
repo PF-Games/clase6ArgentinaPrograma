@@ -29,7 +29,7 @@ function crearUnIntegrante(cantidadIntegrantes){
     $div.className = 'integrante';
   
     const $label = document.createElement('label');
-    $label.textContent = 'Edad del integrante ';
+    $label.textContent = 'Ingresar la edad del integrante ';
     const $input = document.createElement('input');
     $input.type = 'number';
   
@@ -49,9 +49,21 @@ function resetear(){
 }
 
 function calcularEdades(){
-    mostarMayorEdad();
-    mostarMenorEdad();
-    mostrarPromedioEdad();
+    const edades = obtenerEdades();
+    mostarMayorEdad(edades);
+    mostarMenorEdad(edades);
+    mostrarPromedioEdad(edades);
+
+}
+
+function obtenerEdades(){
+    const edades = [];
+    const inputs = document.querySelectorAll('#integrantes input')
+
+    for (let i = 0; i < inputs.length; i++){
+        edades.push(Number(inputs[i].value))
+    }
+    return edades;
 }
 
 function mostarMayorEdad(){
